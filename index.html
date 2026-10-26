@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Standalone teaching example: color-coded selection sets using plain JavaScript.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Palette Selection Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="sample-data.js" defer></script>
+  <script src="palette-state.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="page-header">
+      <div><p class="eyebrow">A standalone JavaScript example</p><h1>Palette Selection Lab</h1>
+        <p class="intro">One color, one selection set. Build separate sets without changing the underlying data.</p></div>
+      <span class="local-badge">Local only · synthetic data</span>
+    </header>
+    <section class="panel" aria-labelledby="palette-title">
+      <div class="section-heading"><div><span class="step">01 / Choose a set</span><h2 id="palette-title">Pick your active color</h2></div><button id="reset" class="quiet" type="button">Reset demo</button></div>
+      <p class="hint">Start with two colors. Add up to five. Then select at least two group cards for each set.</p>
+      <div id="palette" class="palette" aria-label="Selection sets"></div>
+      <p id="active-set" class="hint"></p>
+    </section>
+    <div class="workspace">
+      <section class="panel" aria-labelledby="groups-title">
+        <div class="section-heading"><div><span class="step">02 / Assign groups</span><h2 id="groups-title">Example variable groups</h2></div><button id="clear" class="quiet" type="button">Clear selections</button></div>
+        <p class="hint">Click again to deselect. Choose another color, then click a selected group to move it.</p>
+        <div id="groups" class="groups"></div>
+        <div class="run-bar"><button id="run" class="primary" type="button" disabled>Show selected sets</button><p id="status" role="status" aria-live="polite"></p></div>
+        <section id="results" class="results" aria-label="Selection summaries" hidden></section>
+      </section>
+      <aside class="panel state-panel" aria-labelledby="state-title">
+        <span class="step">03 / See the implementation</span><h2 id="state-title">Live JavaScript state</h2>
+        <p class="hint">The colors only label sets. The assignment map stores group IDs—not values.</p>
+        <pre id="state" tabindex="0" aria-label="Current palette state as JSON"></pre>
+        <p class="code-note"><code>click → update state → render</code></p>
+      </aside>
+    </div>
+    <footer>No Azure DevOps, credentials, storage, dependencies or external API calls. This is an independent teaching example—not extension source code.</footer>
+  </main>
+</body>
+</html>

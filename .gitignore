@@ -1,0 +1,17 @@
+# Optional local tooling and generated files
+node_modules/
+coverage/
+*.log
+*.zip
+
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
